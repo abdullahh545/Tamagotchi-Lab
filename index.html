@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Game</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="script/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Pet Game</h1>
+    </header>
+    <main>
+      <section class="controls">
+        <button id="btn-play">Play</button>
+        <button id="btn-feed">Feed</button>
+        <button id="btn-sleep">Sleep</button>
+      </section>
+      \
+      <section class="stats">
+        <p>Fun: <span id="fun-value">...</span></p>
+        <p>Food: <span id="food-value">...</span></p>
+        <p>Rest: <span id="rest-value">...</span></p>
+      </section>
+      <section class="status">
+        <h2 id="end-message" class="hidden">Game Over!</h2>
+        <img
+          class="tomato-image"
+          alt="tomato character"
+          src="./asset/tomato.jpg"
+        />
+        <button id="btn-restart" class="hidden">Restart</button>
+      </section>
+    </main>
+  </body>
+</html>
