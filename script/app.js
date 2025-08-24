@@ -12,6 +12,29 @@ const foodValueEl = document.getElementById("food-value");
 const restValueEl = document.getElementById("rest-value");
 const endMessageEl = document.getElementById("end-message");
 const restartBtnEl = document.getElementById("btn-restart");
+const playBtnEl = document.getElementById("btn-play");
+const feedBtnEl = document.getElementById("btn-feed");
+const restBtnEl = document.getElementById("btn-rest");
+
+// Button actions
+playBtnEl.addEventListener("click", () => {
+  if (!isGameOver) petState.fun += 1;
+  updateDisplay();
+});
+feedBtnEl.addEventListener("click", () => {
+  if (!isGameOver) petState.food += 1;
+  updateDisplay();
+});
+restBtnEl.addEventListener("click", () => {
+  if (!isGameOver) petState.rest += 1;
+  updateDisplay();
+});
+restartBtnEl.addEventListener("click", () => {
+  resetGame();
+});
+
+// Start game
+startGame();
 
 function startGame() {
   isGameOver = false;
@@ -47,4 +70,12 @@ function checkEnd() {
   }
 }
 
-startGame();
+function resetGame() {
+  petState.fun = 0;
+  petState.food = 0;
+  petState.rest = 0;
+  isGameOver = false;
+  endMessageEl.classList.add("hidden");
+  restartBtnEl.classList.add("hidden");
+  startGame();
+}
